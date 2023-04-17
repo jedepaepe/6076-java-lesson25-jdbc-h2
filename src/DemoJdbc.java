@@ -23,10 +23,7 @@ public class DemoJdbc {
         preparedStatement.execute();
 
         sql = "select * from CAT";
-        statement.getResultSet();
-        boolean isResultSet = statement.execute(sql);
-        System.out.println(isResultSet);
-        ResultSet resultSet = statement.getResultSet();
+        ResultSet resultSet = statement.executeQuery(sql);
         while (resultSet.next()) {
             int id = resultSet.getInt("ID");
             String breed = resultSet.getString("BREED");
